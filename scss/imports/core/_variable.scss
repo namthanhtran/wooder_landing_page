@@ -25,11 +25,16 @@ $sm-min: 992px; //tablet
 $md-min: 1200px; //desktop
 $lg-min: 1600px; //desktop large
 //
-$xxs-max: ($xxs-min - 1);
-$xs-max: ($xs-min - 1);
-$sm-max: ($sm-min - 1);
-$md-max: ($md-min - 1);
-$lg-max: ($lg-min - 1);
+// $xxs-max: ($xxs-min - 1);
+// $xs-max: ($xs-min - 1);
+// $sm-max: ($sm-min - 1);
+// $md-max: ($md-min - 1);
+// $lg-max: ($lg-min - 1);
+$xxs-max: ($xxs-min);
+$xs-max: ($xs-min);
+$sm-max: ($sm-min);
+$md-max: ($md-min);
+$lg-max: ($lg-min);
 //Box layouts
 $max-width: 1920px;
 $container-max-width: $max-width;
