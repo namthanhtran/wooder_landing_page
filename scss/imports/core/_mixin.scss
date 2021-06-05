@@ -1,0 +1,215 @@
+@mixin middleFlex($display: flex, $align-items: center, $justify-content:center) {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin centerAbsolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin middleImg($max-width: initial) {
+    max-width: $max-width;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+@mixin overText($lines) {
+    display: -webkit-inline-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin textStyle($font-family: arial, $font-size: 16px, $text-transform: uppercase, $color: red) {
+    font-family: $font-family;
+    font-size: $font-size;
+    text-transform: $text-transform;
+    color: $color;
+}
+
+//line bottom
+@mixin line {
+    position: absolute;
+    content: "";
+    height: 0.1rem;
+    width: 2rem;
+    background-color: $main-color;
+}
+
+@mixin line-black {
+    position: absolute;
+    content: "";
+    height: 0.1rem;
+    width: 4rem;
+    background-color: $black-color;
+}
+
+//effect button hover
+// MIXINS
+// large desktop
+@mixin desktop_large {
+    @media screen and (max-width: $lg-max) {
+        @content;
+    }
+}
+
+// desktop
+@mixin desktop {
+    @media screen and (max-width: $md-max) {
+        @content;
+    }
+}
+
+// tablet //992px
+@mixin tablet {
+    @media screen and (max-width: $sm-max) {
+        @content;
+    }
+}
+
+// mobile //768px
+@mixin mobile {
+    @media screen and (max-width: $xs-max) {
+        @content;
+    }
+}
+
+// small mobile
+@mixin small_mobile {
+    @media (max-width: $xxs-max) {
+        @content;
+    }
+}
+
+// desktop landscape
+@mixin desktop_lanscape {
+    @media screen and (max-width: $md-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+// tablet landscape
+@mixin tablet_lanscape {
+    @media screen and (max-width: $sm-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+// mobile landscape
+@mixin mobile {
+    @media screen and (max-width: $xs-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin maxW($args) {
+    @media (max-width: $args) {
+        @content;
+    }
+}
+
+@mixin minW($args) {
+    @media (min-width: $args) {
+        @content;
+    }
+}
+
+@mixin minH($args) {
+    @media (min-height: $args) {
+        @content;
+    }
+}
+
+@mixin maxH($args) {
+    @media (max-height: $args) {
+        @content;
+    }
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    animation: #{$str};
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+}
+
+@mixin transform($args) {
+    transform: $args;
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+}
+
+@mixin transform-origin($args) {
+    transform-origin: $args;
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+}
+
+@mixin transition-delay($args) {
+    transition-delay: $args;
+    -webkit-transition-delay: $args;
+    -moz-transition-delay: $args;
+    -ms-transition-delay: $args;
+    -o-transition-delay: $args;
+}
+
+@mixin transition($args) {
+    transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+}
+
+@mixin customscroll($width: 5px, $bgTrack: #000, $bgThumb: #ddd) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        background: $bgTrack;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $bgThumb;
+    }
+}
+
+@mixin visible($param: 1) {
+    @if $param==1 {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    @else {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

@@ -1,1 +1,136 @@
-// css components
+.pro-text {
+    --pText: 100px;
+    --pRight: 10px;
+    padding-left: var(--pText);
+    padding-top: 80px;
+    padding-right: var(--pRight);
+    .text {
+        max-width: 100%;
+        h2 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 1rem;
+            @include textStyle("peb", 40px, uppercase, $black-color);
+        }
+        h2:before {
+            content: '';
+            width: 75px;
+            height: 2px;
+            background-color: $black-color;
+            display: inline-block;
+            margin-left: -90px;
+            left: -10px;
+            top: 12px;
+            position: absolute;
+        }
+        p {
+            width: 100%;
+            @include textStyle("pr", 16px, none, $gray-color);
+        }
+    }
+    &.text-right {
+        text-align: right;
+        padding-right: var(--pText);
+        padding-left: var(--pRight);
+        h2 {
+            flex-direction: row-reverse;
+            &::before {
+                margin-left: initial;
+                left: inherit;
+                margin-right: -80px;
+                right: -20px;
+            }
+        }
+    }
+    &.bottom-text {
+        position: relative;
+        text-align: center;
+        .text {
+            width: 50%;
+            @include centerAbsolute;
+        }
+        h2 {
+            &::before {
+                display: none;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                width: 40px;
+                height: 2px;
+                background-color: $main-color;
+                margin-top: 45px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @include small_mobile {
+            h2 {
+                font-size: 24px;
+                &::after {
+                    bottom: 5px;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    @include tablet {
+        --pText: 0px;
+        --pRight: 20px;
+        padding-left: var(--pText);
+        padding-top: 20px;
+        &.text {
+            h2::before {
+                display: none;
+            }
+        }
+    }
+    @include mobile {
+        --pText: 0px;
+        --pRight: 20px;
+        padding-left: var(--pText);
+        padding-top: 20px;
+        &.bottom-text {
+            h2 {
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 40px;
+                    height: 2px;
+                    background-color: $main-color;
+                    margin-top: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+    @include small_mobile {
+        --pText: 0px;
+        --pRight: 20px;
+        padding-left: var(--pText);
+        padding-top: 20px;
+    }
+}
+
+.text-box {
+    h2 {
+        @include textStyle("pb", 2rem, uppercase, null);
+    }
+    p {
+        @include textStyle("pr", 1rem, null, $gray-color);
+    }
+    @include mobile {
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}

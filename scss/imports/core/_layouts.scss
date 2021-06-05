@@ -13,14 +13,20 @@
     -webkit-appearance: none;
 }
 
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     width: 100%;
     max-width: $container-max-width;
     margin: auto;
-    @include text($fz-text, $font-main, $lh-text, $text-cl, none);
-    background: $white-cl;
+    @include textStyle;
+    background: $bg-color;
     scroll-behavior: smooth;
+    transition: all 0.5s;
     position: relative;
     @include customscroll();
     .container {
@@ -36,7 +42,7 @@ body {
         padding-left: 30px;
         margin-right: auto;
         margin-left: auto;
-        @include xs {
+        @include mobile {
             padding-right: 15px;
             padding-left: 15px;
         }
@@ -84,19 +90,19 @@ body {
         margin: auto;
         @include visible;
     }
-    @include lg {
+    @include desktop-large {
         // CSS responsive large desktop
     }
-    @include md {
+    @include desktop {
         // CSS responsive desktop
     }
-    @include sm {
+    @include tablet {
         // CSS responsive tablet
     }
-    @include xs {
+    @include mobile {
         // CSS responsive mobile
     }
-    @include xxs {
+    @include small_mobile {
         // CSS responsive small mobile
     }
     @media (max-width: 500px) {}

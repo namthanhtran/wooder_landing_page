@@ -1,0 +1,36 @@
+//color
+$black-color: rgb(0, 0, 0);
+$gray-color: rgb(70, 70, 70);
+$main-color: rgb(190, 166, 124);
+$text-color: rgb(255, 255, 255);
+$text-color-footer: rgb(176, 176, 176);
+$product-video-color: rgb(229, 229, 229);
+//bg color
+$bg-color: rgb(255, 255, 255);
+$bg-gallery: rgb(14, 14, 14);
+//time transistion
+$t: 0.4s;
+//padding-desktop
+$padding: 90px 0;
+//padding-mobile
+$padding-mobile: 60px 0;
+//font-family
+$proxima-extra-bold: "peb";
+$proxima-bold: "pb";
+$proxima-regular: "pr";
+//GRID - media query
+$xxs-min: 568px; //small mobile
+$xs-min: 768px; //mobile
+$sm-min: 992px; //tablet
+$md-min: 1200px; //desktop
+$lg-min: 1600px; //desktop large
+//
+$xxs-max: ($xxs-min - 1);
+$xs-max: ($xs-min - 1);
+$sm-max: ($sm-min - 1);
+$md-max: ($md-min - 1);
+$lg-max: ($lg-min - 1);
+//Box layouts
+$max-width: 1920px;
+$container-max-width: $max-width;
+$container-width: 1010px;

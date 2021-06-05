@@ -1,1 +1,33 @@
-// css footer
+.footer {
+    margin-top: 90px;
+    padding: 25px 0;
+    background-color: $black-color;
+    color: $gray-color;
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    span,
+    a {
+        color: $text-color-footer;
+    }
+    &__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @include mobile {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        &__logo {
+            margin: 20px 0;
+            position: initial;
+            left: initial;
+            @include transform(initial);
+        }
+    }
+}

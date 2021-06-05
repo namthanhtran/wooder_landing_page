@@ -1,1 +1,369 @@
-// css header
+body {
+    &.clicked {
+        .header .container-fluid .toggle {
+            &::before {
+                @include transform(rotate(45deg) translate(6px, 8px));
+                @include transition(transform 0.3s);
+            }
+            span {
+                opacity: 0;
+                @include transition(0.3s);
+            }
+            &:after {
+                @include transform(rotate(-45deg) translate(4px, -8px));
+                @include transition(transform 0.3s);
+            }
+        }
+        .header .nav {
+            @include transition($t);
+            display: block;
+        }
+    }
+}
+
+.sticky {
+    background-color: $black-color;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+.header {
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 80px;
+    transition: 0.5s;
+    .container-fluid {
+        @include middleFlex(flex, center, space-between);
+        height: 100%;
+        .logo {
+            width: 177px;
+            height: 20px;
+            .hidden {
+                display: none;
+            }
+        }
+        .menu {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            li {
+                height: 100%;
+                a {
+                    @include middleFlex;
+                    @include textStyle("pb", 15px, uppercase, $text-color);
+                    @include transition($t);
+                    height: 100%;
+                    padding: 0 30px;
+                    &:hover {
+                        @include transition($t);
+                        color: $main-color;
+                    }
+                    &:active {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+        .right {
+            display: inline-flex;
+            .language {
+                height: 100%;
+                @include middleFlex(flex, center, center);
+                &__current {
+                    display: inline-flex;
+                    cursor: pointer;
+                    span {
+                        @include textStyle("pb", 1rem, uppercase, $text-color);
+                    }
+                    i {
+                        @include middleFlex(flex, center, center);
+                        img {
+                            margin-left: 5px;
+                            width: 12px;
+                        }
+                    }
+                }
+                &__option {
+                    display: none;
+                    width: 50px;
+                    background-color: $main-color;
+                    padding: 10px;
+                    position: absolute;
+                    top: 50px;
+                    right: 30px;
+                    a {
+                        padding: 5px 0;
+                        display: flex;
+                        color: $text-color;
+                    }
+                }
+                &:hover {
+                    @include transition($t);
+                    .language__option {
+                        display: block;
+                    }
+                }
+            }
+            .toggle {
+                cursor: pointer;
+                width: 40px;
+                height: 20px;
+                // background-color: $main-color;
+                display: none;
+                position: relative;
+                span {
+                    @include transform(translateY(-50%));
+                    @include transition(0.3s);
+                    background-color: $main-color;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    top: 50%;
+                }
+                &:before,
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background-color: $main-color;
+                    @include transform(rotate(0deg) translateY(0px));
+                    @include transition(transform 0.3s);
+                }
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                }
+                // &.clicked {
+                //     &::before {
+                //         @include transform(rotate(45deg) translate(6px, 8px));
+                //         @include transition(transform 0.3s);
+                //     }
+                //     span {
+                //         opacity: 0;
+                //         @include transition(0.3s);
+                //     }
+                //     &:after {
+                //         @include transform(rotate(-45deg) translate(4px, -8px));
+                //         @include transition(transform 0.3s);
+                //     }
+                // }
+            }
+        }
+    }
+    @include desktop {
+        .container-fluid {
+            .logo {
+                width: 170px;
+            }
+        }
+        .nav {
+            display: none;
+        }
+    }
+    @include desktop-large {
+        .container-fluid {
+            .logo {
+                width: 170px;
+            }
+        }
+        .nav {
+            display: none;
+        }
+    }
+    @include tablet {
+        height: 60px;
+        background-color: $black-color;
+        .container-fluid {
+            .logo {
+                width: 150px;
+            }
+            .menu {
+                display: none;
+            }
+            .right {
+                .language {
+                    &__option {
+                        display: none;
+                        width: 50px;
+                        background-color: $main-color;
+                        padding: 10px;
+                        position: absolute;
+                        top: 50px;
+                        right: 9%;
+                        a {
+                            padding: 5px 0;
+                            display: flex;
+                            color: $text-color;
+                        }
+                    }
+                }
+                .toggle {
+                    margin-left: 20px;
+                    display: block;
+                }
+            }
+        }
+        .nav {
+            display: none;
+            background-color: $black-color;
+            width: 100vw;
+            height: 100vh;
+            ul {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    @include transition($t);
+                    margin: 0 auto;
+                    padding: 20px;
+                    width: 100vw;
+                    text-align: center;
+                    a {
+                        @include textStyle('pr', 1rem, uppercase, $text-color);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        width: 100vw;
+                        background-color: $main-color;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        height: 50px;
+        background-color: $black-color;
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+            .logo {
+                width: 100px;
+            }
+            .menu {
+                display: none;
+            }
+            .right {
+                .language {
+                    &__option {
+                        display: none;
+                        width: 50px;
+                        background-color: $main-color;
+                        padding: 10px;
+                        position: absolute;
+                        top: 50px;
+                        right: 12%;
+                        a {
+                            padding: 5px 0;
+                            display: flex;
+                            color: $text-color;
+                        }
+                    }
+                }
+                .toggle {
+                    margin-left: 20px;
+                    display: block;
+                }
+            }
+        }
+        .nav {
+            display: none;
+            background-color: $black-color;
+            width: 100vw;
+            height: 100vh;
+            @include transition($t);
+            ul {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    @include transition($t);
+                    margin: 0 auto;
+                    padding: 20px;
+                    width: 100vw;
+                    text-align: center;
+                    a {
+                        @include textStyle('pr', 1rem, uppercase, $text-color);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        width: 100vw;
+                        background-color: $main-color;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    @include small_mobile {
+        height: 50px;
+        background-color: $black-color;
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+            .logo {
+                width: 100px;
+            }
+            .menu {
+                display: none;
+            }
+            .right {
+                .language {
+                    &__option {
+                        display: none;
+                        width: 50px;
+                        background-color: $main-color;
+                        padding: 10px;
+                        position: absolute;
+                        top: 50px;
+                        right: 12%;
+                        a {
+                            padding: 5px 0;
+                            display: flex;
+                            color: $text-color;
+                        }
+                    }
+                }
+                .toggle {
+                    margin-left: 20px;
+                    display: block;
+                }
+            }
+        }
+        .nav {
+            display: none;
+            background-color: $black-color;
+            width: 100vw;
+            height: 100vh;
+            @include transition($t);
+            ul {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    @include transition($t);
+                    margin: 0 auto;
+                    padding: 20px;
+                    width: 100vw;
+                    text-align: center;
+                    a {
+                        @include textStyle('pr', 1rem, uppercase, $text-color);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        width: 100vw;
+                        background-color: $main-color;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

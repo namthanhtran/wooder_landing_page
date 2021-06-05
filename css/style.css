@@ -1,0 +1,18 @@
+/* Error: @content is only allowed within mixin declarations.
+ *   ,
+ * 4 |         @content;
+ *   |         ^^^^^^^^
+ *   '
+ *   assets\scss\core\_header.scss 4:9  @import
+ *   assets\scss\style.scss 12:9        root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: @content is only allowed within mixin declarations.\a   \2577 \a 4 \2502          @content;\d\a   \2502          ^^^^^^^^\a   \2575 \a   assets\\scss\\core\\_header.scss 4:9  @import\a   assets\\scss\\style.scss 12:9        root stylesheet";
+}
