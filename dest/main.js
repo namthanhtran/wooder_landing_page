@@ -285,6 +285,10 @@ $(document).ready(function() {
         })
     })
 
+    $('.popup__video').on('click', function() {
+        $('.popup__video iframe').attr('src', '');
+        $('.popup__video').css("display", "none");
+    })
 
 })
 
