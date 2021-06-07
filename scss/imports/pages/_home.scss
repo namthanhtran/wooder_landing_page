@@ -451,6 +451,9 @@
                 &__quality {
                     .bottom-text {
                         padding-bottom: 50px;
+                        .text {
+                            width: 100%;
+                        }
                     }
                     &-video {
                         margin-top: 50px;

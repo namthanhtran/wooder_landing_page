@@ -187,20 +187,20 @@ $(document).ready(function() {
     })
 
     // Menu header
-    let menus = $('.menu li a');
-    $(menus).each(function(index, element) {
-        $(element).click(function(item) {
-            item.preventDefault();
-            let href = $(this).attr('href');
-            let nameItem = $(href).attr('id');
-            let div = ('.' + nameItem);
-            let position = $(div).offset().top;
+    // let menus = $('.menu li a');
+    // $(menus).each(function(index, element) {
+    //     $(element).click(function(item) {
+    //         item.preventDefault();
+    //         let href = $(this).attr('href');
+    //         let nameItem = $(href).attr('id');
+    //         let div = ('.' + nameItem);
+    //         let position = $(div).offset().top;
 
-            window.scrollTo({
-                top: position - $('header').innerHeight(),
-            })
-        })
-    })
+    //         window.scrollTo({
+    //             top: position - $('header').height(),
+    //         })
+    //     })
+    // })
 
     // Change language
     $('.language').on('click', function(e) {
