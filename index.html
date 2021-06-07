@@ -19,7 +19,11 @@
     <meta property="og:image" content="" />
 
     <link rel="stylesheet" href="dest/style.min.css">
-    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="dest/font.css">
+    <!-- <link rel="stylesheet" href="dest/stylelibs.min.css"> -->
+    <!-- sử dụng stylelibs bị bug nên thay vào đó nhúng 2 file trong libs của css -->
+    <link rel="stylesheet" href="css/libs/flickity.css">
+    <link rel="stylesheet" href="css/libs/photoswipe.css">
 
 </head>
 
@@ -254,26 +258,78 @@
                     <h2>gallery</h2>
                     <p>We are a team of professionals in the wood processing and the.We are a team of professionals in the wood processing and the </p>
                 </div>
-                <div class="gallery__image">
-                    <div class="gallery__image-item">
-                        <img src="img/gallery/gallery-1.png" alt="">
-                    </div>
-                    <div class="gallery__image-item">
-                        <img src="img/gallery/gallery-3.png" alt="">
-                    </div>
-                    <div class="gallery__image-item">
-                        <img src="img/gallery/gallery-2.png" alt="">
-                    </div>
-                    <div class="gallery__image-item">
-                        <img src="img/gallery/gallery-4.png" alt="">
-                    </div>
-                    <div class="gallery__image-item">
-                        <img src="img/gallery/gallery-5.png" alt="">
-                    </div>
+                <div class="carousel-img" itemscope data-pswp-uid="1">
+                    <figure class="image img1">
+                        <a href="img/gallery/gallery-1.png" data-size="317x200">
+                            <img src="img/gallery/gallery-1.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="image img2">
+                        <a href="img/gallery/gallery-2.png" data-size="317x411">
+                            <img src="img/gallery/gallery-2.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="image img3">
+                        <a href="img/gallery/gallery-3.png" data-size="317x200">
+                            <img src="img/gallery/gallery-3.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="image img4">
+                        <a href="img/gallery/gallery-4.png" data-size="317x200">
+                            <img src="img/gallery/gallery-4.png" alt="">
+                        </a>
+                    </figure>
+                    <figure class="image img5">
+                        <a href="img/gallery/gallery-5.png" data-size="317x200">
+                            <img src="img/gallery/gallery-5.png" alt="">
+                        </a>
+                    </figure>
                 </div>
             </div>
         </div>
         <!-- Gallery End -->
+
+
+        <!-- Popup Gallery -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Popup Gallery End -->
+
+
 
         <!-- News -->
         <div class="news" id="news">
@@ -318,28 +374,46 @@
         <!-- Scroll -->
         <div class="scroll">
             <div class="scroll-item">
-                <img src="img/gallery/gallery-1.png" alt="">
+                <img data-flickity-lazyLoad="img/gallery/gallery-1.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/gallery/gallery-2.png" alt="">
+                <img data-flickity-lazyLoad="img/gallery/gallery-2.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/gallery/gallery-3.png" alt="">
+                <img data-flickity-lazyLoad="img/gallery/gallery-3.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/gallery/gallery-4.png" alt="">
+                <img data-flickity-lazyLoad="img/gallery/gallery-4.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/gallery/gallery-5.png" alt="">
+                <img data-flickity-lazyLoad="img/gallery/gallery-5.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/news/news-1.png" alt="">
+                <img data-flickity-lazyLoad="img/news/news-1.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/news/news-2.png" alt="">
+                <img data-flickity-lazyLoad="img/news/news-2.png" alt="">
             </div>
             <div class="scroll-item">
-                <img src="img/news/news-3.png" alt="">
+                <img data-flickity-lazyLoad="img/news/news-3.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/gallery/gallery-3.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/gallery/gallery-4.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/gallery/gallery-5.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/news/news-1.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/news/news-2.png" alt="">
+            </div>
+            <div class="scroll-item">
+                <img data-flickity-lazyLoad="img/news/news-3.png" alt="">
             </div>
         </div>
         <!-- Scroll End -->
@@ -357,7 +431,7 @@
                 <img src="img/logo.png" alt="">
             </div>
             <div class="footer__back">
-                <a href="#" class="btn">
+                <a href="#" class="btnToTop">
                 BACK TO TOP
             </a>
             </div>
@@ -371,18 +445,11 @@
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ws-QlpSltr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="close-popup"></div>
         </div>
-        <!-- <div class="popup__video-wrap">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KKc_RMln5UY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="close-popup"></div>
-    </div>
-    <div class="popup__video-wrap">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/oigiXW6XyCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="close-popup"></div>
-    </div> -->
         <!-- Ws-QlpSltr8
     KKc_RMln5UY
     oigiXW6XyCQ -->
     </div>
+
     <!-- Popup video End -->
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="dest/main.js"></script>
