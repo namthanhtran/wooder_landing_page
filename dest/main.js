@@ -1,9 +1,9 @@
-// // Sticky header
+// Sticky header
 
-// let header = document.querySelector('header');
-// let heightHeader = header.clientHeight;
-// let slider = document.querySelector('.slider');
-// let heightSlider = slider.clientHeight;
+let header = document.querySelector('header');
+let heightHeader = header.clientHeight;
+let slider = document.querySelector('.slider');
+let heightSlider = slider.clientHeight;
 
 // document.addEventListener('scroll', function() {
 //     let scrollY = window.pageYOffset;
@@ -26,6 +26,7 @@ menus.forEach(function(element, index) {
         let className = href.replace('#', '');
         let div = document.querySelector('.' + className);
         let positionDiv = div.offsetTop;
+        console.log(positionDiv);
         window.scrollTo({
             top: positionDiv - heightHeader,
             behavior: 'smooth'
@@ -223,25 +224,25 @@ $(document).ready(function() {
 
 
     // Navbar header
-    // let nav = $('.nav ul li a');
+    let nav = $('.nav ul li a');
 
-    // $('.toggle').on('click', function(e) {
-    //     e.stopPropagation();
-    //     $('body').toggleClass('clicked');
-    // })
-    // $(nav).each(function(index, element) {
-    //     $(element).on('click', function(e) {
-    //         e.preventDefault();
-    //         let href = $(this).attr('href');
-    //         let nameItem = $(href).attr('id');
-    //         let divName = ('.' + nameItem);
-    //         let positionDiv = $(divName).offset().top;
-    //         window.scroll({
-    //             top: positionDiv - $('header').height(),
-    //         })
-    //         $('body').removeClass('clicked');
-    //     })
-    // })
+    $('.toggle').on('click', function(e) {
+        e.stopPropagation();
+        $('body').toggleClass('clicked');
+    })
+    $(nav).each(function(index, element) {
+        $(element).on('click', function(e) {
+            e.preventDefault();
+            let href = $(this).attr('href');
+            let nameItem = $(href).attr('id');
+            let divName = ('.' + nameItem);
+            let positionDiv = $(divName).offset().top;
+            window.scroll({
+                top: positionDiv - $('header').height(),
+            })
+            $('body').removeClass('clicked');
+        })
+    })
 
     // Slider controls
     let $carousel = $('.slider__image');
@@ -459,4 +460,3 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 initPhotoSwipeFromDOM('.carousel-img');
-$(window).load(function() {});
