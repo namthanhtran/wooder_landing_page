@@ -16,22 +16,22 @@
 // })
 
 
-// // Scroll menu
-// let menus = document.querySelectorAll('header .menu a');
+// Scroll menu
+let menus = document.querySelectorAll('header .menu a');
 
-// menus.forEach(function(element, index) {
-//     element.addEventListener('click', function(e) {
-//         e.preventDefault();
-//         let href = element.getAttribute('href');
-//         let className = href.replace('#', '');
-//         let div = document.querySelector('.' + className);
-//         let positionDiv = div.offsetTop;
-//         window.scrollTo({
-//             top: positionDiv - heightHeader,
-//             behavior: 'smooth'
-//         })
-//     })
-// });
+menus.forEach(function(element, index) {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        let href = element.getAttribute('href');
+        let className = href.replace('#', '');
+        let div = document.querySelector('.' + className);
+        let positionDiv = div.offsetTop;
+        window.scrollTo({
+            top: positionDiv - heightHeader,
+            behavior: 'smooth'
+        })
+    })
+});
 
 
 // // Change language
@@ -223,25 +223,25 @@ $(document).ready(function() {
 
 
     // Navbar header
-    let nav = $('.nav ul li a');
+    // let nav = $('.nav ul li a');
 
-    $('.toggle').on('click', function(e) {
-        e.stopPropagation();
-        $('body').toggleClass('clicked');
-    })
-    $(nav).each(function(index, element) {
-        $(element).on('click', function(e) {
-            e.preventDefault();
-            let href = $(this).attr('href');
-            let nameItem = $(href).attr('id');
-            let divName = ('.' + nameItem);
-            let positionDiv = $(divName).offset().top;
-            window.scroll({
-                top: positionDiv - $('header').height(),
-            })
-            $('body').removeClass('clicked');
-        })
-    })
+    // $('.toggle').on('click', function(e) {
+    //     e.stopPropagation();
+    //     $('body').toggleClass('clicked');
+    // })
+    // $(nav).each(function(index, element) {
+    //     $(element).on('click', function(e) {
+    //         e.preventDefault();
+    //         let href = $(this).attr('href');
+    //         let nameItem = $(href).attr('id');
+    //         let divName = ('.' + nameItem);
+    //         let positionDiv = $(divName).offset().top;
+    //         window.scroll({
+    //             top: positionDiv - $('header').height(),
+    //         })
+    //         $('body').removeClass('clicked');
+    //     })
+    // })
 
     // Slider controls
     let $carousel = $('.slider__image');
