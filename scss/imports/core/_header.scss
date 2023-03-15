@@ -157,6 +157,9 @@ body {
             }
         }
     }
+    .nav{
+        display: none;
+    }
     @include desktop {
         .container-fluid {
             .logo {
